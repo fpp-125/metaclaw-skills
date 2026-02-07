@@ -1,0 +1,15 @@
+apiVersion: metaclaw.capability/v1
+kind: CapabilityContract
+metadata:
+  name: obsidian.search
+  version: v1.0.0
+permissions:
+  network: none
+  env:
+    - OBSIDIAN_VAULT_DIR
+  secrets: []
+compatibility:
+  runtimeTargets:
+    - docker
+    - podman
+    - apple_container
