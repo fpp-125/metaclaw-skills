@@ -1,33 +1,49 @@
 # metaclaw-skills
 
-Reusable skill modules for MetaClaw.
+Reusable capability modules for MetaClaw.
 
-## Repository Contract
+## Repository Boundary
 
-Every skill directory must include:
+This repo is for reusable skills only.
 
-- `SKILL.md`
-- `capability.contract.yaml`
+- includes: `SKILL.md`, `capability.contract.yaml`, skill lint/tests, versioned skill implementations
+- excludes: full business bots/workflows, engine runtime internals, registry server code
+
+## What Is capability.contract?
+
+`capability.contract` declares what a skill needs and what it is compatible with.
+
+Typical fields:
+
+- required mounts/network/env/secrets
+- runtime compatibility (`docker` / `podman` / `apple_container`)
+- contract version for compile-time enforcement
+
+MetaClaw uses this contract at compile time to reject unsafe or incompatible integrations.
+
+## Layout
+
+- `skills/<name>/SKILL.md`
+- `skills/<name>/capability.contract.yaml`
 
 Example: `skills/obsidian.search/`
 
-## Validation
-
-Run skill linter:
+## Validate
 
 ```bash
 go run ./cmd/skilllint ./skills
-```
-
-Run tests:
-
-```bash
 go test ./...
 ```
 
 ## Publish Flow
 
-1. Implement skill and contract in this repo.
-2. Tag a version.
-3. Build/publish OCI artifact for the skill bundle.
+1. Implement skill + contract.
+2. Tag version.
+3. Build and publish skill artifact to OCI registry (for example `ghcr.io`).
 4. Register metadata in `metaclaw-registry`.
+
+## Related Repos
+
+- engine: https://github.com/fpp-125/metaclaw
+- examples: https://github.com/fpp-125/metaclaw-examples
+- registry backend: https://github.com/fpp-125/metaclaw-registry
