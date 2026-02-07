@@ -9,6 +9,15 @@ This repo is for reusable skills only.
 - includes: `SKILL.md`, `capability.contract.yaml`, skill lint/tests, versioned skill implementations
 - excludes: full business bots/workflows, engine runtime internals, registry server code
 
+## Ecosystem Repo Map
+
+| Repo | Primary Responsibility | URL |
+| --- | --- | --- |
+| `metaclaw` | Engine core: compiler, runtime adapters, lifecycle/state | https://github.com/fpp-125/metaclaw |
+| `metaclaw-examples` | Runnable end-to-end examples and starter templates | https://github.com/fpp-125/metaclaw-examples |
+| `metaclaw-skills` | Reusable capabilities (`SKILL.md` + `capability.contract`) | https://github.com/fpp-125/metaclaw-skills |
+| `metaclaw-registry` | Publish/distribution backend for skill/capsule metadata | https://github.com/fpp-125/metaclaw-registry |
+
 ## What Is capability.contract?
 
 `capability.contract` declares what a skill needs and what it is compatible with.
