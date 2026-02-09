@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/metaclaw/metaclaw-skills/internal/contract"
+	"github.com/fpp-125/metaclaw-skills/internal/contract"
 )
 
 type Result struct {

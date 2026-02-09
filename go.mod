@@ -1,4 +1,4 @@
-module github.com/metaclaw/metaclaw-skills
+module github.com/fpp-125/metaclaw-skills
 
 go 1.25.7
 

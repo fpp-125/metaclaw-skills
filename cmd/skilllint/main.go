@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/metaclaw/metaclaw-skills/internal/lint"
+	"github.com/fpp-125/metaclaw-skills/internal/lint"
 )
 
 func main() {
